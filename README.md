@@ -70,15 +70,19 @@ Zend OPcache
 define("URL", "https://mob2217.securitasdirect.es:12010/WebService/ws.do");
 
 // Identifiant du compte verisure
+
 define("LOGIN","login");
 
 // Mot de passe du compte verisure
+
 define("PASSWD", "password");
 
 // numéro installation
+
 define("INSTALL","000000");
 
 // Langue (fr / en)
+
 define("LANG","fr");
 
 // Access Key de http://api.ipstack.com/ (inscription gratuite)
