@@ -7,61 +7,61 @@ Fork de https://github.com/Cebeerre/VerisureEUAPI en PHP
 
 Liste des modules PHP actifs : 
 
-[PHP Modules]
-apc
-apcu
-calendar
-Core
-ctype
-curl
-date
-dom
-exif
-FFI
-fileinfo
-filter
-ftp
-gd
-gettext
-hash
-iconv
-json
-libxml
-mbstring
-mysqli
-mysqlnd
-openssl
-pcntl
-pcre
-PDO
-pdo_mysql
-Phar
-posix
-readline
-Reflection
-session
-shmop
-SimpleXML
-sockets
-sodium
-SPL
-standard
-sysvmsg
-sysvsem
-sysvshm
-tokenizer
-xdebug
-xml
-xmlreader
-xmlwriter
-xsl
-Zend OPcache
-zip
-zlib
+* [PHP Modules]
+- apc
+- apcu 
+- calendar
+- Core
+- ctype
+- curl
+- date
+- dom
+- exif
+- FFI
+- fileinfo
+- filter
+- ftp
+- gd
+- gettext
+- hash
+- iconv
+- json
+- libxml
+- mbstring
+- mysqli
+- mysqlnd
+- openssl
+- pcntl
+- pcre
+- PDO
+- pdo_mysql
+- Phar
+- posix
+- readline
+- Reflection
+- session
+- shmop
+- SimpleXML
+- sockets
+- sodium
+- SPL
+- standard
+- sysvmsg
+- sysvsem
+- sysvshm
+- tokenizer
+- xdebug
+- xml
+- xmlreader
+- xmlwriter
+- xsl
+- Zend OPcache
+- zip
+- zlib
 
-[Zend Modules]
-Xdebug
-Zend OPcache
+* [Zend Modules]
+- Xdebug
+- Zend OPcache
 
 
 # Installation 
@@ -86,5 +86,7 @@ define("INSTALL","000000");
 define("LANG","fr");
 
 // Access Key de http://api.ipstack.com/ (inscription gratuite)
+
 define("KEYIP","XXXXX");
 
+- Editer le fichier auth.php pour l'authentification . 
