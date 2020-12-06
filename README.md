@@ -3,6 +3,12 @@
 # verisure-api-php
 Fork of https://github.com/Cebeerre/VerisureEUAPI to PHP
 
+# Version 0.1 
+- Activate or deactivate the partial or full alarm
+- List sensor material detector
+- Send photos by mail
+
+
 # Configurations
 - PHP 7.4
 - Apache 2.4
