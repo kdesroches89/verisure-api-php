@@ -103,7 +103,9 @@ define("LANG","fr");
 define("KEYIP","XXXXX");
 
 #Message authenticate
+
 $realm = "AUTHENTIFICATION";
 
 #Login1 => password1 , login2 => password2 , etc ...
+
 $users = array('user1' => 'user1', 'user2' => 'user2');
