@@ -1,10 +1,10 @@
 <?php
 ###############################################
-##KDE 2020
-################################################
+###KDE 2020
+#################################################
 #
-include("auth.php");
 include("connect.php");
+
 if ($mul == 1){
 	$gret = call("GET",$_GET["act"], $post1,null);
 	sleep(10);
@@ -18,11 +18,11 @@ if ($mul == 1){
 	if ($ret->RES == "OK"){
 		echo $ret->MSG;
 		if (strstr($ret->MSG,"sactiv")){
-			echo "<h2>[<strong><a href='#' alt='ARMER TOTALE' onclick='caction(\"ARM\")'><font color='red'>ACTIVER ALARME TOTALE</font></a></strong>]</h3>";
-			echo "<h2>[<strong><a href='#' alt='ARMER PARTIELLE' onclick='caction(\"ARMNIGHT\")'><font color='red'>ACTIVER ALARME PARTIELLE</font></a></strong>]</h3>";
+			echo "<h2>[<strong><a href='#' alt='$ActiveAlarmComplete' onclick='caction(\"ARM\")'><font color='red'>$ActiveAlarmComplete</font></a></strong>]</h3>";
+			echo "<h2>[<strong><a href='#' alt='$ActiveAlarmPartial' onclick='caction(\"ARMNIGHT\")'><font color='red'>$ActiveAlarmPartial</font></a></strong>]</h3>";
 		}else{
 
-			echo "<br><h2>[<a href='#' alt='ARMER PARTIELLE' onclick='caction(\"DARM\")'><font color='red'><strong>DESACTIVER ALARME</strong></font></a>]</h3>";
+			echo "<br><h2>[<a href='#' alt='$DesactiveAlarm' onclick='caction(\"DARM\")'><font color='red'><strong>$DesactiveAlarm</strong></font></a>]</h3>";
 		}
 
 
@@ -30,8 +30,8 @@ if ($mul == 1){
 
 	}else{
 		echo "<div style='display:none'>WAIT</div>";
-		echo "Une erreur est survenue <br>".$ret->MSG;
-		echo "<br><a href='#' alt='relancer' onclick='caction(\"".$_GET['act']."\")'><font color='red'>[ RELANCER ]</font></a>";
+		echo "ERROR SYSTEM <br>".$ret->MSG;
+		echo "<br><a href='#' alt='relancer' onclick='caction(\"".$_GET['act']."\")'><font color='red'>[ $Relaunch ]</font></a>";
 		exit();
 	}
 
@@ -54,19 +54,19 @@ if ($envpost == 1){
 
 		echo "<body onload='action(\"EST\"); ip(\"".$myip."\")'>";
 
-		echo "<center><h1> <font color='#FFF'>ALARME : ". $ret->INSTALLATION["alias"]."</font> </h1></center>";
-		echo "<center><font color='#FFF'><center>Mon IP : ".$myip." (".gethostbyaddr($myip).")</font></center><br>";
+		echo "<center><h1> <font color='#FFF'>$TitreAlarm : ". $ret->INSTALLATION["alias"]."</font> </h1></center>";
+		echo "<center><font color='#FFF'><center>$DesIP : ".$myip." (".gethostbyaddr($myip).")</font></center><br>";
 		echo "<center><font color='#FFF'> <span id='local'></span></font></center><br>";
 		echo "<br><br>";
 		echo "<br><center><h3><font color='red'><span id='status'></span><span id='img'></span></font></h3> </center><br>";
-		print '<center><font color="#FFF">:: <strong>DETECTEURS DE MOUVEMENTS</strong> ::</font> <br><table width="100%" border="1" cellspacing="1" cellpadding="5">';
+		print '<center><font color="#FFF">:: <strong>'.$ListDetecteurMouv.'</strong> ::</font> <br><table width="100%" border="1" cellspacing="1" cellpadding="5">';
 
 		foreach ($ret->INSTALLATION->DEVICES->DEVICE as $al){
 
 			if (strstr($al["aliasType"],"image")){
 				echo "<tr><td>";
 				echo "<li><b> ".$al["alias"]." (".$al["aliasType"].")</b></li></td>";
-				echo "<td> <center><a href='#".$al["idDev"]."' onclick='cimg(".$al["idDev"].")'><img src='img/pict.png'  alt='Demander une image' width='50' height='50'></a></center>";
+				echo "<td> <center><a href='#".$al["idDev"]."' onclick='cimg(".$al["idDev"].")'><img src='img/pict.png'  alt='$ImgDemand' width='50' height='50'></a></center>";
 				echo "</td></tr>";
 			}
 
@@ -75,7 +75,7 @@ if ($envpost == 1){
 		print '</table></center>';
 
 
-		print '<br><center><font color="#FFF">:: <strong>AUTRES DETECTEURS</strong> ::</font> <br><table width="100%" border="1" cellspacing="1" cellpadding="5">';
+		print '<br><center><font color="#FFF">:: <strong>'.$OtherDetector.'</strong> ::</font> <br><table width="100%" border="1" cellspacing="1" cellpadding="5">';
 
 		foreach ($ret->INSTALLATION->DEVICES->DEVICE as $al){
 
@@ -93,7 +93,7 @@ if ($envpost == 1){
 		echo "</body>";
 
 	}else{
-		echo "Une erreur est survenue ".$ret->MSG;
+		echo "SYSTEM ERROR ".$ret->MSG;
 		exit();
 	}
 }
@@ -116,12 +116,8 @@ if ($envget == 1){
 
 			$balimg = str_replace("IMG","INF",$_SERVER['QUERY_STRING']);
 		}
-		//echo $ret->INSTALATION->INSTIBS."<br>";
-		//echo $ret->INSTALATION->SIM."<br>";
-		//echo $ret->INSTALATION->TIMEBOX."<br>";
-		//echo $ret->MSG;
 	}else{
-		echo "Une erreur est survenue ".$ret->MSG;
+		echo "SYSTEM ERROR ".$ret->MSG;
 		exit();
 	}
 

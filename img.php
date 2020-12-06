@@ -49,10 +49,10 @@ $balimg = str_replace("IMG2","ACT_V2",$balimg);
 $retimgact = img($balimg."&ID=IPH_________________________".$_SESSION["token"]."&panel=SDVFAST&callby=AND_61&Country=FR&lang=fr&idservice=1&numinst=".INSTALL."&user=".LOGIN."&pwd=".PASSWD."&hash=".$_SESSION["HASH"]."&instibs=".$instibs."&timefilter=3&activityfilter=0");
 
 if ($retimgact->RES == "OK"){
-	echo "Les images ont été tranmise par mail";
+	echo $ImgSend;
 	echo $retimgact->MSG;
 }else{
-	echo "Une erreur est survenue : ".$retimgact->MSG."";
+	echo "Error System : ".$retimgact->MSG."";
 }
 
 ?>

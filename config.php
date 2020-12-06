@@ -16,6 +16,6 @@ define("LANG","fr");
 // Access Key de http://api.ipstack.com/ (inscription gratuite)
 define("KEYIP","XXXXX");
 
-
+include("lang.php");
 ?>
 

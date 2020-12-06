@@ -93,7 +93,7 @@ define("INSTALL","000000");
 
 define("LANG","fr");
 
-// Access Key de http://api.ipstack.com/ (Free subscribe)
+// Access Key de http://www.ipstack.com/ (Free subscribe)
 
 define("KEYIP","XXXXX");
 

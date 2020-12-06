@@ -38,7 +38,7 @@ if (!isset($_SESSION["HASH"])){
 	if ($reponse == "OK"){
 		$_SESSION["HASH"] = $hash;
 	}else{
-		echo "Erreur HASH<br>";
+		echo "Hash Error<br>";
 	}
 }else{
 	echo "NO";
