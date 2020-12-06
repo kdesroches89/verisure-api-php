@@ -1,11 +1,13 @@
+*NOTE: THIS PROJECT IS NOT IN ANY WAY ASSOCIATED WITH OR RELATED TO THE SECURITAS DIRECT-VERISURE GROUP COMPANIES. The information here and online is for educational and resource purposes only and therefore the developers do not endorse or condone any inappropriate use of it, and take no legal responsibility for the functionality or security of your alarms and devices.
+
 # verisure-api-php
-Fork de https://github.com/Cebeerre/VerisureEUAPI en PHP
+Fork of https://github.com/Cebeerre/VerisureEUAPI to PHP
 
 # Configurations
 - PHP 7.4
 - Apache 2.4
 
-Liste des modules PHP actifs : 
+List of active PHP modules : 
 
 * [PHP Modules]
 - apc
@@ -65,19 +67,19 @@ Liste des modules PHP actifs :
 
 
 # Installation 
-- Editer le config.php
+- Edit config.php
 
 define("URL", "https://mob2217.securitasdirect.es:12010/WebService/ws.do");
 
-// Identifiant du compte verisure
+// Login account verisure securitas
 
 define("LOGIN","login");
 
-// Mot de passe du compte verisure
+// Password account verisure securitas
 
 define("PASSWD", "password");
 
-// numéro installation
+// Installation number account
 
 define("INSTALL","000000");
 
@@ -85,8 +87,8 @@ define("INSTALL","000000");
 
 define("LANG","fr");
 
-// Access Key de http://api.ipstack.com/ (inscription gratuite)
+// Access Key de http://api.ipstack.com/ (Free subscribe)
 
 define("KEYIP","XXXXX");
 
-- Editer le fichier auth.php pour l'authentification . 
+- Edit file auth.php for authentication . 
