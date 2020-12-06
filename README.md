@@ -6,6 +6,7 @@ Fork of https://github.com/Cebeerre/VerisureEUAPI to PHP
 
 # Version 0.2
 - Add language Italian , English , Spain
+- Authenticate Amélioration
 
 # Version 0.1 
 - Activate or deactivate the partial or full alarm
@@ -101,4 +102,8 @@ define("LANG","fr");
 
 define("KEYIP","XXXXX");
 
-- Edit file auth.php for authentication . 
+#Message authenticate
+$realm = "AUTHENTIFICATION";
+
+#Login1 => password1 , login2 => password2 , etc ...
+$users = array('user1' => 'user1', 'user2' => 'user2');
