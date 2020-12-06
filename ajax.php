@@ -1,8 +1,9 @@
 <!--
 ###############################################
-##KDE 2020
-################################################
--->
+###KDE 2020
+#################################################
+#-->
+
 <script type="text/javascript" language="javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery.ui.js"></script>
 <script language="javascript">
@@ -67,24 +68,24 @@ function ip(act){
 function caction(act){
 
 	if (act == "ARM"){
-		var typealarm = "activer en mode total";
+		var typealarm = "<?php echo strtolower($ActiveAlarmComplete); ?>";
 	}
 
 	if (act == "DARM"){
-		var typealarm = "désactiver";
+		var typealarm = "<?php echo strtolower($DesactiveAlarm); ?>";
 	}
 
 	if (act == "ARMNIGHT"){
-		var typealarm = "activer en mode partiel";
+		var typealarm = "<?php echo strtolower($ActiveAlarmPartial); ?>";
 	}       
-	if (confirm('Etes vous sûre de vouloir ' + typealarm + ' l\'alarme ?')) {
+	if (confirm("<?php echo $DemandAct; ?> " + typealarm + ' ?')) {
 		action(act);
 	}
 }
 
 function cimg(act){
 
-	if (confirm('Etes vous sûre de vouloir déclencher l\'action de photo ?')) {
+	if (confirm('<?php echo $DemandAct . " ". strtolower($ImgDemand) ?> ?')) {
 		img(act);
 	}
 }

@@ -6,7 +6,11 @@
 session_start();
 include("function.api.php");
 ini_get('register_globals');
-define("REGION",strtoupper(LANG));
+if (LANG == "en"){
+	define("REGION","GB");
+}else{
+	define("REGION",strtoupper(LANG));
+}
 
 $_SESSION["TAB"] = array();
 if (!isset($_SESSION["HASH"])){
@@ -32,13 +36,22 @@ if (!isset($_SESSION["HASH"])){
 
 	$hashret = call("GET","LOGIN", $getLog,null);
 	$reponse = $hashret->RES;
+	$errcode = $hashret->ERR;
 	$message = $hashret->MSG;
 	$hash = $hashret->HASH;
+
+
+	if (!empty($errcode)){
+		if ($errcode == "60057"){
+			echo "<h1>Check the language of your country</h1><br>";
+		}
+		echo "<br>ERROR SYSTEM : $message";
+	}
 
 	if ($reponse == "OK"){
 		$_SESSION["HASH"] = $hash;
 	}else{
-		echo "Hash Error<br>";
+		echo "<br>Hash Error<br>";
 	}
 }else{
 	echo "NO";
