@@ -3,6 +3,10 @@
 # verisure-api-php
 Fork of https://github.com/Cebeerre/VerisureEUAPI to PHP
 
+
+# Version 0.2
+- Add language Italian , English , Spain
+
 # Version 0.1 
 - Activate or deactivate the partial or full alarm
 - List sensor material detector
@@ -89,7 +93,7 @@ define("PASSWD", "password");
 
 define("INSTALL","000000");
 
-// Langue (fr / en)
+// Langue (fr / en / es / it)
 
 define("LANG","fr");
 
