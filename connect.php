@@ -5,6 +5,7 @@
 #
 session_start();
 include("function.api.php");
+include("auth.php");
 ini_get('register_globals');
 if (LANG == "en"){
 	define("REGION","GB");
@@ -18,16 +19,15 @@ if (!isset($_SESSION["HASH"])){
 
 
 	$datetime = strftime(date("YmdHis"));
-	$token = LOGIN.$datetime;
+	$token = "vericlient".$datetime;
 	$_SESSION["token"] = $token;
 
 	$getLog = array(
 		'request' => "LOGIN",
-		'ID' =>  "IPH_________________________".$_SESSION["token"],
+		'ID' =>  "AND_________________________".$_SESSION["token"],
 		'Country' => REGION,
 		'lang' => LANG,
-		'panel' => 'SDVFAST',
-		'callby' => 'AND_61',
+		'CALLBY' => 'AND_61',
 		'user' => LOGIN,
 		'pwd' => PASSWD,
 		'numinst' => INSTALL
@@ -65,8 +65,8 @@ if (strstr($_GET["act"],"ACT_V2")){
 		'ID' => $_GET["ID"],
 		'Country' => REGION,
 		'lang' => LANG,
-		'panel' => 'SDVFAST',
-		'callby' => 'AND_61',
+		//'panel' => 'SDVFAST',
+		'CALLBY' => 'AND_61',
 		'user' => LOGIN,
 		'idservice' => "1",
 		'instibs' => $_GET["instibs"],
@@ -90,7 +90,7 @@ if (strstr($_GET["act"],"IMG")){
 		'Country' => REGION,
 		'lang' => LANG,
 		'panel' => 'SDVFAST',
-		'callby' => 'AND_61',
+		'CALLBY' => 'AND_61',
 		'user' => LOGIN,
 		'idservice' => "1",
 		'instibs' => $_GET["instibs"],
@@ -109,11 +109,11 @@ if ((strstr($_GET["act"],"SRV"))||(strstr($_GET["act"],"INF"))){
 	$envget = 1;
 	$post = array(
 		'request' => $_GET["act"],
-		'ID' =>  "IPH_________________________".$_SESSION["token"],
+		'ID' =>  "AND_________________________".$_SESSION["token"],
 		'Country' => REGION,
 		'lang' => LANG,
 		'panel' => 'SDVFAST',
-		'callby' => 'AND_61',
+		'CALLBY' => 'AND_61',
 		'user' => LOGIN,
 		'pwd' => PASSWD,
 		'numinst' => INSTALL,
@@ -130,7 +130,7 @@ if ((strstr($_GET["act"],"EST"))||(strstr($_GET["act"],"ARM"))||(strstr($_GET["a
 	$mul = 1;
 	$post1 = array(
 		'request' => $_GET["act"]."1",
-		'ID' =>  "IPH_________________________".$_SESSION["token"],
+		'ID' =>  "AND_________________________".$_SESSION["token"],
 		'Country' => REGION,
 		'lang' => LANG,
 		'panel' => 'SDVFAST',
@@ -143,7 +143,7 @@ if ((strstr($_GET["act"],"EST"))||(strstr($_GET["act"],"ARM"))||(strstr($_GET["a
 
 	$post2 = array(
 		'request' => $_GET["act"]."2",
-		'ID' =>  "IPH_________________________".$_SESSION["token"],
+		'ID' =>  "AND_________________________".$_SESSION["token"],
 		'Country' => REGION,
 		'lang' => LANG,
 		'panel' => 'SDVFAST',
@@ -161,11 +161,11 @@ if ((strstr($_GET["act"],"MYINSTALLATION"))||($index==1)){
 	$envpost = 1;
 	$post = array(
 		'request' => $get,
-		'ID' =>  "IPH_________________________".$_SESSION["token"],
+		'ID' =>  "AND_________________________".$_SESSION["token"],
 		'Country' => REGION,
 		'lang' => LANG,
-		'panel' => 'SDVFAST',
-		'callby' => 'AND_61',
+		//'panel' => 'SDVFAST',
+		'CALLBY' => 'AND_61',
 		'user' => LOGIN,
 		'pwd' => PASSWD,
 		'numinst' => INSTALL,

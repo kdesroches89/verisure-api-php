@@ -1,8 +1,4 @@
 <?php
-###############################################
-###KDE 2020
-#################################################
-#
 include("connect.php");
 
 if ($mul == 1){
@@ -65,6 +61,8 @@ if ($envpost == 1){
 
 			if (strstr($al["aliasType"],"image")){
 				echo "<tr><td>";
+				#echo "ID:  ".$al->DEVICE["idDev"]."<br>";
+				#echo "Code: ".$al->DEVICE["code"]."<br>";
 				echo "<li><b> ".$al["alias"]." (".$al["aliasType"].")</b></li></td>";
 				echo "<td> <center><a href='#".$al["idDev"]."' onclick='cimg(".$al["idDev"].")'><img src='img/pict.png'  alt='$ImgDemand' width='50' height='50'></a></center>";
 				echo "</td></tr>";
@@ -81,7 +79,10 @@ if ($envpost == 1){
 
 			if (! strstr($al["aliasType"],"image")){
 				echo "<tr><td>";
+				#echo "ID:  ".$al->DEVICE["idDev"]."<br>";
+				#echo "Code: ".$al->DEVICE["code"]."<br>";
 				echo "<li><b> ".$al["alias"]." (".$al["aliasType"].")</b></li></td>";
+				#echo "<td> <center></center></td>";
 				echo "</td></tr>";
 			}
 
@@ -116,6 +117,10 @@ if ($envget == 1){
 
 			$balimg = str_replace("IMG","INF",$_SERVER['QUERY_STRING']);
 		}
+		//echo $ret->INSTALATION->INSTIBS."<br>";
+		//echo $ret->INSTALATION->SIM."<br>";
+		//echo $ret->INSTALATION->TIMEBOX."<br>";
+		//echo $ret->MSG;
 	}else{
 		echo "SYSTEM ERROR ".$ret->MSG;
 		exit();
